@@ -1,17 +1,8 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { QuizContext } from '../context/QuizContext';
-import Spinner from '../components/layout/Spinner';
-import { FaHatWizard, FaFootballBall, FaBaseballBall, FaStar, FaBrain } from 'react-icons/fa';
+import { FaHatWizard, FaFootballBall, FaBaseballBall, FaBrain } from 'react-icons/fa';
 
 const Home = () => {
-  const { featuredQuizzes, loading, getFeaturedQuizzes } = useContext(QuizContext);
-
-  useEffect(() => {
-    getFeaturedQuizzes();
-    // eslint-disable-next-line
-  }, []);
-
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -23,16 +14,24 @@ const Home = () => {
               <FaFootballBall className="me-2" />
               <FaBaseballBall className="me-2" />
             </div>
-            Welcome to Quiz Master
+            Welcome to Magical Quizzes
           </h1>
           <p className="lead">
-            Test your knowledge on various topics with our engaging quizzes
+            Create, take, and share engaging quizzes on your favorite topics!
           </p>
           <hr className="my-4" />
-          <p>
-            From Harry Potter to Cricket, from Football to general knowledge,
-            we've got quizzes for everyone!
-          </p>
+          <div className="mb-4">
+            <h5 className="text-light mb-3">🌟 What you can do:</h5>
+            <ul className="text-light text-start">
+              <li>Create your own magical quizzes with multiple-choice questions</li>
+              <li>Update and manage your quizzes anytime</li>
+              <li>Take quizzes created by other wizards</li>
+              <li>Track your progress and view detailed results</li>
+            </ul>
+            <p className="mt-3">
+              <strong>Please register or login to start your magical journey!</strong>
+            </p>
+          </div>
           <Link to="/quizzes" className="btn btn-primary btn-lg me-3">
             Browse Quizzes
           </Link>
@@ -40,56 +39,6 @@ const Home = () => {
             Join Now
           </Link>
         </div>
-      </div>
-
-      {/* Featured Quizzes */}
-      <div className="container my-5">
-        <h2 className="text-center mb-4">
-          <FaStar className="text-warning me-2" />
-          Featured Quizzes
-        </h2>
-        
-        {loading ? (
-          <Spinner />
-        ) : featuredQuizzes.length === 0 ? (
-          <div className="alert alert-info text-center">
-            No featured quizzes available at the moment. Check back soon!
-          </div>
-        ) : (
-          <div className="row">
-            {featuredQuizzes.map(quiz => (
-              <div className="col-md-4 mb-4" key={quiz._id}>
-                <div className="card h-100 shadow-sm">
-                  <div className="card-header bg-primary text-white">
-                    <h5 className="card-title mb-0">{quiz.title}</h5>
-                  </div>
-                  <img 
-                    src={quiz.quizImage || `https://picsum.photos/seed/${quiz._id}/300/150`} 
-                    alt={quiz.title} 
-                    className="card-img-top"
-                    style={{ height: '150px', objectFit: 'cover' }}
-                  />
-                  <div className="card-body">
-                    <p className="card-text">{quiz.description}</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <small className="text-muted">
-                        {quiz.questions.length} questions
-                      </small>
-                      <span className="badge bg-info rounded-pill">
-                        {quiz.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="card-footer bg-white">
-                    <Link to={`/quizzes/${quiz._id}`} className="btn btn-primary w-100">
-                      View Quiz
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* Popular Categories */}

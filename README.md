@@ -123,3 +123,79 @@ This will start both the backend server (port 5001) and the frontend development
 
 This project is licensed under the MIT License.
 
+## File Structure Overview
+
+### Frontend (`/frontend`)
+- **Pages**
+  - `Home.js` - Landing page with featured quizzes and categories
+  - `Login.js` - User login page
+  - `Register.js` - User registration page
+  - `Dashboard.js` - User dashboard showing created quizzes and attempts
+  - `QuizList.js` - Browse and search all available quizzes
+  - `QuizDetails.js` - Detailed view of a single quiz
+  - `TakeQuiz.js` - Interface for taking a quiz
+  - `QuizResults.js` - Shows results after completing a quiz
+  - `CreateQuiz.js` - Form for creating new quizzes
+  - `EditQuiz.js` - Form for editing existing quizzes
+  - `Profile.js` - User profile management
+
+- **Components**
+  - `/layout`
+    - `Navbar.js` - Top navigation bar
+    - `Footer.js` - Site footer
+    - `Spinner.js` - Loading animation
+    - `Alert.js` - Error/success messages
+  - `/routing`
+    - `PrivateRoute.js` - Route protection for authenticated users
+
+- **Context**
+  - `AuthContext.js` - Authentication state management
+  - `QuizContext.js` - Quiz data and operations management
+  - `/reducers`
+    - `authReducer.js` - Authentication state updates
+    - `quizReducer.js` - Quiz state updates
+
+### Backend (Root Directory)
+- **Server**
+  - `server.js` - Main Express server setup
+  - `.env` - Environment variables configuration
+
+- **API Routes**
+  - `/routes`
+    - `userRoutes.js` - User authentication endpoints
+    - `quizRoutes.js` - Quiz CRUD operations
+    - `attemptRoutes.js` - Quiz attempt handling
+
+- **Controllers**
+  - `/controllers`
+    - `userController.js` - User-related logic
+    - `quizController.js` - Quiz management logic
+    - `attemptController.js` - Quiz attempt logic
+
+- **Models**
+  - `/models`
+    - `User.js` - User data schema
+    - `Quiz.js` - Quiz data schema
+    - `Attempt.js` - Quiz attempt data schema
+
+- **Middleware**
+  - `/middleware`
+    - `auth.js` - Authentication middleware
+    - `error.js` - Error handling middleware
+
+### Utility Files
+- `/utils`
+  - `setAuthToken.js` - Axios authentication header setup
+  - `index.js` - Common utility functions
+
+### Testing and Documentation
+- `test-login.html` - Test page for authentication
+- `test-api.js` - API testing utilities
+- `postman_documentation.md` - API endpoint documentation
+- `errors-encountered.txt` - Common issues and solutions
+
+### Scripts
+- `setup.sh` - Initial setup script
+- `run-app.sh` - Application startup script
+- `restart.sh` - Application restart script
+

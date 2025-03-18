@@ -6,7 +6,6 @@ import quizReducer from './reducers/quizReducer';
 const initialState = {
   quizzes: [],
   quiz: null,
-  featuredQuizzes: [],
   attempt: null,
   attempts: [],
   loading: true,
@@ -34,23 +33,6 @@ export const QuizProvider = ({ children }) => {
       dispatch({
         type: 'GET_QUIZZES',
         payload: res.data
-      });
-    } catch (err) {
-      dispatch({
-        type: 'QUIZ_ERROR',
-        payload: err.response.data.message
-      });
-    }
-  };
-
-  // Get featured quizzes
-  const getFeaturedQuizzes = async () => {
-    try {
-      const res = await axios.get('/api/quizzes/featured');
-
-      dispatch({
-        type: 'GET_FEATURED_QUIZZES',
-        payload: res.data.data
       });
     } catch (err) {
       dispatch({
@@ -393,13 +375,11 @@ export const QuizProvider = ({ children }) => {
       value={{
         quizzes: state.quizzes,
         quiz: state.quiz,
-        featuredQuizzes: state.featuredQuizzes,
         attempt: state.attempt,
         attempts: state.attempts,
         loading: state.loading,
         error: state.error,
         getQuizzes,
-        getFeaturedQuizzes,
         getQuiz,
         createQuiz,
         updateQuiz,

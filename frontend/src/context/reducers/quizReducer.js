@@ -7,12 +7,6 @@ const quizReducer = (state, action) => {
         pagination: action.payload.pagination,
         loading: false
       };
-    case 'GET_FEATURED_QUIZZES':
-      return {
-        ...state,
-        featuredQuizzes: action.payload,
-        loading: false
-      };
     case 'GET_QUIZ':
       return {
         ...state,

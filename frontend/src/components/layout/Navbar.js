@@ -69,7 +69,7 @@ const Navbar = () => {
             <FaFootballBall className="me-2" />
             <FaBaseballBall className="me-2" />
           </div>
-          Quiz Master
+          Magical Quizzes
         </Link>
         <button
           className="navbar-toggler"

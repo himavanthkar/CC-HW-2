@@ -8,39 +8,37 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <h5>Quiz Master</h5>
-            <p>
-              Test your knowledge on various topics with our engaging quizzes.
-              From Harry Potter to Cricket, from Football to general knowledge,
-              we've got quizzes for everyone!
+            <h5 className="text-info">Magical Quizzes</h5>
+            <p className="text-light">
+              Welcome to our enchanting quiz platform! Create and share your own magical quizzes, 
+              challenge your friends, and explore a world of knowledge. Join our community of 
+              curious minds and let the learning adventure begin!
             </p>
           </div>
           <div className="col-md-3">
-            <h5>Quick Links</h5>
+            <h5 className="text-info">Quick Links</h5>
             <ul className="list-unstyled">
-              <li><Link to="/" className="text-white">Home</Link></li>
-              <li><Link to="/quizzes" className="text-white">Quizzes</Link></li>
-              <li><Link to="/register" className="text-white">Register</Link></li>
-              <li><Link to="/login" className="text-white">Login</Link></li>
+              <li><Link to="/" className="text-light hover-info">Home</Link></li>
+              <li><Link to="/quizzes" className="text-light hover-info">Browse Quizzes</Link></li>
+              <li><Link to="/register" className="text-light hover-info">Join Us</Link></li>
+              <li><Link to="/login" className="text-light hover-info">Sign In</Link></li>
             </ul>
           </div>
           <div className="col-md-3">
-            <h5>Popular Themes</h5>
+            <h5 className="text-info">Popular Categories</h5>
             <ul className="list-unstyled">
-              <li><FaHatWizard className="me-2" /><span className="text-warning">Harry Potter</span></li>
-              <li><FaBaseballBall className="me-2" /><span className="text-success">Cricket</span></li>
-              <li><FaFootballBall className="me-2" /><span className="text-danger">Football</span></li>
-              <li><span className="text-primary">General Knowledge</span></li>
+              <li><FaHatWizard className="me-2 text-purple" /><span className="text-warning">Magical Knowledge</span></li>
+              <li><FaBaseballBall className="me-2 text-teal" /><span className="text-success">Sports & Games</span></li>
+              <li><FaFootballBall className="me-2 text-orange" /><span className="text-danger">Team Sports</span></li>
+              <li><span className="text-info">Science & Nature</span></li>
             </ul>
           </div>
         </div>
-        <hr />
+        <hr className="border-info" />
         <div className="text-center">
           <p>
-            &copy; {new Date().getFullYear()} Quiz Master. All rights reserved.
-            <br />
-            <small>
-              "Knowledge is Power!"
+            <small className="text-info">
+              "Curiosity is the spark that ignites the flame of knowledge!"
             </small>
           </p>
         </div>
