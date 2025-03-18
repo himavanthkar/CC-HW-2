@@ -1,4 +1,4 @@
-# Quiz Master Application
+# Quiz Application HW-2
 
 A full-featured quiz application that allows users to create, share, and take quizzes on various topics.
 
